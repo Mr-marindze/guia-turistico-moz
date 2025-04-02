@@ -1,0 +1,248 @@
+/* Variáveis de cores */
+:root {
+    --primary-color: #2E7D32; /* Verde principal */
+    --secondary-color: #FFC107; /* Amarelo/dourado */
+    --dark-color: #263238; /* Cinza escuro */
+    --light-color: #f5f5f5; /* Cinza claro */
+    --text-color: #333; /* Cor do texto */
+    --text-light: #777; /* Texto secundário */
+    --white: #ffffff;
+    --black: #000000;
+  }
+  
+  /* Reset básico */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* Tipografia */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+  }
+  
+  a:hover {
+    color: var(--secondary-color);
+  }
+  
+  /* Botões */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 2px solid var(--primary-color);
+  }
+  
+  .btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+  }
+  
+  .btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+    border: 2px solid var(--secondary-color);
+  }
+  
+  .btn-secondary:hover {
+    background-color: transparent;
+    color: var(--dark-color);
+  }
+  
+  .btn-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+  }
+  
+  .btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+  }
+  
+  /* Header */
+  .main-header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+  
+  .logo img {
+    height: 40px;
+    width: auto;
+  }
+  
+  .main-nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  .main-nav li {
+    margin-left: 30px;
+    position: relative;
+  }
+  
+  .main-nav a {
+    color: var(--dark-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+  
+  .main-nav a:hover {
+    color: var(--primary-color);
+  }
+  
+  .main-nav a.active {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  .mobile-menu {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--dark-color);
+  }
+  
+  /* Footer */
+  .main-footer {
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding: 50px 0 20px;
+  }
+  
+  .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .footer-col h3 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+  }
+  
+  .footer-col ul {
+    list-style: none;
+  }
+  
+  .footer-col li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-col a {
+    color: #ccc;
+  }
+  
+  .footer-col a:hover {
+    color: var(--white);
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-links a {
+    color: var(--white);
+    font-size: 1.2rem;
+    transition: all 0.3s;
+  }
+  
+  .social-links a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-3px);
+  }
+  
+  .copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .main-nav {
+      display: none;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background-color: var(--white);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+  
+    .main-nav.active {
+      display: block;
+    }
+  
+    .main-nav ul {
+      flex-direction: column;
+    }
+  
+    .main-nav li {
+      margin: 10px 0;
+    }
+  
+    .mobile-menu {
+      display: block;
+    }
+  
+    .header-container {
+      padding: 10px 0;
+    }
+  }

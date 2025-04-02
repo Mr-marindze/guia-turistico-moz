@@ -1,0 +1,312 @@
+/* Hero Banner - Versão Otimizada 2024 */
+.hero-banner {
+  position: relative;
+  height: 100vh;
+  min-height: 650px;
+  max-height: 1200px;
+  background: 
+    linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%),
+    url('/guia-turistico-moz/public/images/banners/home-banner.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  margin-top: 80px;
+  overflow: hidden;
+  will-change: transform; /* Otimização para animações */
+}
+
+/* Efeito Parallax Moderno */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-banner {
+    background-attachment: fixed;
+  }
+}
+
+/* Overlay com Gradiente Dinâmico */
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%),
+    linear-gradient(to right, rgba(0,91,76,0.4) 0%, rgba(7,54,66,0.4) 100%);
+  backdrop-filter: blur(1.5px);
+  mix-blend-mode: multiply;
+}
+
+/* Conteúdo Principal - Design de Vidro (Glassmorphism) */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: min(90%, 1200px);
+  padding: clamp(30px, 5vw, 60px);
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: all 0.4s ease;
+}
+
+.hero-content:hover {
+  background: rgba(0, 0, 0, 0.35);
+  transform: translateY(-5px);
+}
+
+/* Tipografia Responsiva com clamp() */
+.hero-content h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  margin-bottom: clamp(15px, 3vw, 25px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  color: #fff;
+  text-shadow: 
+    0 2px 4px rgba(0,0,0,0.4),
+    0 4px 12px rgba(0,0,0,0.3);
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero-content p {
+  font-size: clamp(1.1rem, 2vw, 1.8rem);
+  margin-bottom: clamp(25px, 4vw, 40px);
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 300;
+  text-shadow: 
+    0 1px 3px rgba(0,0,0,0.5),
+    0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* Botão Moderno com Gradiente Animado */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: 
+    linear-gradient(135deg, 
+      #07c511 0%, 
+      #05a30e 100%);
+  color: white;
+  border: none;
+  padding: clamp(12px, 2vw, 16px) clamp(30px, 5vw, 40px);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 600;
+  border-radius: 50px;
+  box-shadow: 
+    0 4px 15px rgba(7, 197, 17, 0.3),
+    0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 
+    0 8px 25px rgba(7, 197, 17, 0.4),
+    0 4px 8px rgba(0,0,0,0.15);
+  background: 
+    linear-gradient(135deg, 
+      #05a30e 0%, 
+      #07c511 100%);
+}
+
+.btn-primary:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+/* Ícone no botão (opcional) */
+.btn-primary i {
+  font-size: 1.2em;
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover i {
+  transform: translateX(3px);
+}
+
+/* Animações Otimizadas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+/* Efeito de Partículas (Opcional) */
+.hero-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Responsividade Avançada */
+@media (max-width: 992px) {
+  .hero-banner {
+    min-height: 600px;
+  }
+  
+  .hero-content {
+    border-radius: 15px;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    min-height: 500px;
+    background-attachment: scroll;
+  }
+  
+  .hero-content {
+    width: 95%;
+    padding: 30px;
+  }
+  
+  .btn-primary {
+    padding: 12px 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-banner {
+    min-height: 400px;
+    margin-top: 70px;
+  }
+  
+  .hero-content {
+    padding: 25px 20px;
+    backdrop-filter: blur(5px);
+  }
+  
+  .hero-content h1 {
+    letter-spacing: 0;
+  }
+}
+
+/* Acessibilidade - Modo Contraste */
+@media (prefers-contrast: more) {
+  .hero-content {
+    background: black !important;
+    border: 2px solid white !important;
+  }
+  
+  .btn-primary {
+    background: yellow !important;
+    color: black !important;
+    border: 2px solid black !important;
+  }
+}
+
+/* Performance - Evita repaints desnecessários */
+.hero-banner, 
+.hero-content, 
+.btn-primary {
+  will-change: transform, opacity;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .hero-overlay {
+    background: 
+      radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.8) 100%);
+  }
+  
+  .hero-content {
+    background: rgba(0, 0, 0, 0.4);
+    border-color: rgba(255,255,255,0.1);
+  }
+}
+/* Adicione ao seu CSS */
+.destinations-grid, .news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.destination-card, .news-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.destination-card:hover, .news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.destination-card img, .news-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.destination-info, .news-content {
+  padding: 20px;
+}
+
+.province-badge, .news-category {
+  display: inline-block;
+  background: #07c511;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin: 10px 0;
+}
+
+.read-more {
+  color: #07c511;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}

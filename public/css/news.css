@@ -1,0 +1,125 @@
+/* Banner da Página */
+.news-banner {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('/images/banners/news-banner.jpg') no-repeat center center;
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    margin-top: 80px;
+  }
+  
+  .news-banner h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+  
+  /* Categorias */
+  .news-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+  
+  .news-categories button {
+    padding: 8px 20px;
+    background-color: var(--light-color);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+  
+  .news-categories button.active,
+  .news-categories button:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+  }
+  
+  /* Lista de Notícias */
+  .news-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+  }
+  
+  .news-item {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+  
+  .news-image {
+    position: relative;
+  }
+  
+  .news-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .news-date {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+  
+  .news-content {
+    padding: 20px;
+  }
+  
+  .news-category {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .news-content h3 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+  }
+  
+  .news-excerpt {
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .news-list {
+      grid-template-columns: 1fr;
+    }
+    
+    .news-banner h1 {
+      font-size: 2rem;
+    }
+    
+    .news-categories {
+      justify-content: flex-start;
+    }
+  }
